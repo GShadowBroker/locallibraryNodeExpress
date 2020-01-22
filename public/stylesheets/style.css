@@ -1,0 +1,143 @@
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  position: relative;
+  font-family: sans-serif;
+  background-image: linear-gradient(120deg, orange, orangered); }
+
+a, a:hover, a:visited, a::before, a::after {
+  list-style: none;
+  text-decoration: none; }
+
+a {
+  color: orangered;
+  transition: 0.3s; }
+
+a:hover {
+  color: #772102;
+  text-decoration-line: underline; }
+
+.loadscreen {
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(120deg, orange, orangered); }
+
+.header-banner {
+  background-image: url(../images/books.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 250px;
+  width: 100%;
+  color: white;
+  text-shadow: 1px 1px 4px black; }
+  .header-banner .title-header {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 8px;
+    font-size: 3em; }
+    .header-banner .title-header .login {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      box-shadow: 2px 2px 4px #353535;
+      padding: 5px 0px 5px 0px;
+      font-size: 0.4em;
+      letter-spacing: normal;
+      transition: all 300ms;
+      cursor: pointer; }
+      .header-banner .title-header .login a, .header-banner .title-header .login a:hover, .header-banner .title-header .login a:visited {
+        padding: 5px 10px 5px 10px;
+        margin-right: 5px;
+        color: white;
+        text-decoration-line: none;
+        background-color: black; }
+        .header-banner .title-header .login a:hover, .header-banner .title-header .login a:hover:hover, .header-banner .title-header .login a:visited:hover {
+          background-color: #02022e; }
+    .header-banner .title-header i {
+      color: orangered; }
+    .header-banner .title-header h1 {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-weight: 900; }
+
+.container-fluid {
+  margin-top: 20px; }
+
+.nav-menu, .content {
+  padding: 2rem;
+  background-color: #ecf0f1; }
+  @media screen and (max-width: 768px) {
+    .nav-menu, .content {
+      border-top-right-radius: 150px; } }
+
+.content {
+  border-top-right-radius: 150px; }
+  @media screen and (max-width: 768px) {
+    .content {
+      border-top-right-radius: 0px; } }
+
+.sidebar-nav {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  padding-top: 20px;
+  list-style: none; }
+  .sidebar-nav li {
+    font-size: 0.95em; }
+    @media screen and (max-width: 768px) {
+      .sidebar-nav li {
+        font-size: 1.2em; } }
+
+.content {
+  position: relative; }
+  .content .form-container {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 65%; }
+    .content .form-container h1 {
+      color: orangered; }
+    @media screen and (max-width: 768px) {
+      .content .form-container {
+        width: 100%; } }
+  .content #search-input * {
+    border-radius: 0px; }
+    .content #search-input * .input-group-text {
+      border-top-left-radius: 40px;
+      border-bottom-left-radius: 40px; }
+    .content #search-input * i {
+      color: orangered; }
+  .content .search-btn {
+    border-top-right-radius: 40px !important;
+    border-bottom-right-radius: 40px !important;
+    background-color: #fd5a1f;
+    border: none; }
+    .content .search-btn:hover {
+      background-color: #ff4400; }
+
+/*# sourceMappingURL=style.css.map */

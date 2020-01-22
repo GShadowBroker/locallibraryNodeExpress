@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    div(class="template-content")
+        h1= author.name
+        p Birth: #{author.date_of_birth}
+        p Death: #{author.date_of_death}
+        if author.lifespan
+            p Lifespan: #{author.lifespan}
+
+        h3 Books:
+            ul
+                each book in author.books
+                    li
+                        a(href=book.url) #{book.title}. Book ID: #{book.id}.
+        hr
+
+        button
+            a(href="/authors") Back

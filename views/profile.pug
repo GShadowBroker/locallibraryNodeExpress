@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    if user
+        h1 #{user.username}'s profile
+        p User ID: #{user.id}
+        p E-mail: #{user.email}
+        p Password: #{user.password}
+    else
+        h1 You are not logged in.
+        a(href="/auth/login") Login here!

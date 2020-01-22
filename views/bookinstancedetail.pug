@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    div(class="template-content")
+        h1= bookinstance.book.title
+        p Copy ID: #{bookinstance.id}
+        p Imprint: #{bookinstance.imprint}
+        p Status: #{bookinstance.status}
+        p Due back: #{bookinstance.due_back}
+
+        hr
+
+        button
+            a(href="/bookinstances") Back

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    
+    h1 Find a book:
+    form(action="/search" method="get")
+        .form-group
+            div(class="input-group" id="search-input")
+                label(class="sr-only" for="title") Search for a book
+                .input-group-prepend
+                    .input-group-text
+                        i(class="fas fa-search")
+                    input(name="title" type="text" class="form-control" placeholder="e.g. Harry Potter")
+                input(type="submit" class="btn btn-secondary search-btn" value="Search")

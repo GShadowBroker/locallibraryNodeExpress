@@ -1,0 +1,42 @@
+extends layout
+
+block content
+    h1 Add a new book instance:
+    form(action="" method="post")
+        if errors
+                ul
+                    each error in errors
+                        li(class="text-danger")= error.message
+        table
+            tr
+                td
+                    label(for="bookId") Book
+                td
+                    select(name="bookId" value=bookId required)
+                        option(value="") No book selected
+                        if books
+                            each book in books
+                                option(value=book.id)= book.title
+            tr
+                td
+                    label(for="imprint") Imprint
+                td
+                    input(type="text" name="imprint" placeholder="e.g. Dovetail Inc." value=imprint required)
+            tr
+                td
+                    label(for="status") Status
+                td
+                    select(name="status" value=status required)
+                        option(value="Maintenance") Maintenance
+                        option(value="Available") Available
+                        option(value="Loaned") Loaned
+                        option(value="Reserved") Reserved
+            tr
+                td
+                    label(for="due_back") Due Back
+                td
+                    input(type="date" name="due_back" value=due_back)
+                
+            tr
+                td
+                    input(type="submit" value="Save")

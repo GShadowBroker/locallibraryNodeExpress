@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    div(class="template-content")
+        h1 Search Results:
+        ol
+            each book in books
+                li
+                    strong
+                        a(href=book.url)= book.title

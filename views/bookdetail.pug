@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    div(class="template-content")
+        h1= book.title
+        if book.authors.length == 1
+            p Author:
+                a(href=book.authors[0].url) #{book.authors[0].name}
+        else if book.authors.length > 1
+            p Authors:
+                each author in book.authors
+                    a(href=author.url) #{author.name}
+        p ISBN: #{book.isbn}
+        if book.genre
+            p Genre: #{book.genre.name}
+        else
+            p Genre: -
+        p Book ID: #{book.id}
+        h3 Summary
+        p= book.summary
+
+        h3 Book Instances:
+            ul
+                each bookinstance in book.bookinstances
+                    li
+                        a(href=bookinstance.url) Copy ID: #{bookinstance.id}
+        hr
+
+        button
+            a(href="/books") Back

@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    h1 Login:
+    form(action="" method="post")
+        small(class="text-muted") Don't have an account? Make a 
+            a(href="/auth/register") free account here.
+        
+        //- if messages.error
+        //-     p(class="text-danger")= messages.error
+
+        if errors
+                ul
+                    each error in errors
+                        li(class="text-danger")= error.message
+        .form-group
+            label(for="username") Username
+            input(class="form-control" id="username" type="text" name="username" placeholder="Enter your username" value=username required)
+        .form-group
+            label(for="password") Password
+            input(class="form-control" id="password" type="password" name="password" placeholder="Enter your password" value=password required)
+        div(class="form-group form-check")
+            input(type="checkbox" class="form-check-input" id="checkbox")
+            label(for="checkbox" class="form-check-label") Remember me.
+        
+        .form-group
+            input(class="btn btn-block btn-warning" type="submit" value="Login")

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    div(class="template-content")
+        h1 Book Instance list page
+        ul
+            if bookinstances.length
+                each bookinstance in bookinstances
+                    li
+                        a(href=bookinstance.url)
+                            = `${bookinstance.book.title}, imprint: ${bookinstance.imprint}, status: ${bookinstance.status}, due back: ${bookinstance.due_back}`
+            else
+                p No book instances to display.
+                    

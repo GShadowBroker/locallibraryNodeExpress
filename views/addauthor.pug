@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    h1 Add a new author:
+    form(action="" method="post")
+        if errors
+                ul
+                    each error in errors
+                        li(class="text-danger")= error.message
+        table
+            
+            tr
+                td
+                    label(for="first_name") First Name
+                td
+                    input(type="text" name="first_name" placeholder="e.g. William" value=first_name required)
+            tr
+                td
+                    label(for="family_name") Family Name
+                td
+                    input(type="text" name="family_name" placeholder="e.g. Shakespeare" value=family_name required)
+            tr
+                td
+                    label(for="date_of_birth") Birth
+                td
+                    input(type="date" name="date_of_birth" value=date_of_birth)
+            tr
+                td
+                    label(for="date_of_death") Death
+                td
+                    input(type="date" name="date_of_death" value=date_of_death)
+            tr
+                td
+                    input(type="submit" value="Save")

@@ -1,0 +1,44 @@
+extends layout
+
+block content
+    if alert
+        p(class="text-success")= alert
+    
+    if errors
+        ul
+            each error in errors
+                li(class="text-danger") #{error.param.toUpperCase()}: #{error.msg}
+        
+    h1 Register a new account:
+
+    small(class="text-muted") Already have an account? Head over to the 
+        a(href="/auth/login") login page.
+
+    form(class="register-form" action="/auth/register" method="post" @submit.prevent="handleSubmitRegister")
+        .form-group
+            label(for="email") E-mail:
+            input(class="form-control" id="email" type="email" name="email" placeholder="E-mail" required)
+            small(class="form-text text-muted") We will never share your e-mail with anyone else.
+        .form-group
+            label(for="username") Username:
+            input(class="form-control" id="username" type="text" name="username" placeholder="Username" required)
+            small(class="form-text text-muted") Your username on the website.
+        .form-group
+            label(for="password1") Password:
+            input(class="form-control" id="password1" type="password" name="password" placeholder="Password" required)
+            small(class="form-text text-muted") The password must contain between 6-24 alphanumeric characters.
+        .form-group
+            label(for="password2") Confirm Password:
+            input(class="form-control" id="password2" type="password" name="passwordConfirm" placeholder="Password" required)
+            small(class="form-text text-muted") The password must contain between 6-24 alphanumeric characters.
+        div(class="form-group form-check")
+            input(type="checkbox" class="form-check-input" id="checkbox" @click="toggleRegisterButton")
+            label(for="checkbox" class="form-check-label") I fully agree with the 
+                a(href="#") Terms of Use.
+
+
+        ul(v-if="errors.length > 0")
+            li(class="text-danger" v-for="error in errors") {{error.message}}
+
+                
+        input(class="btn btn-warning btn-block" type="submit" value="Register" :class="submitButtonClass")
